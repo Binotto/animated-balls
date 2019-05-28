@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Loop de Animações</title>
+	<script src="animacao.js"></script>
+	<script src="bola.js"></script>
+	<script src="retangulo.js"></script>
+	
+</head>
+<body>
+	<canvas id="canvas_animacao" width="1900" height="1200"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas_animacao");
+		var context = canvas.getContext('2d');
+
+		//Criação de Sprites
+		var b1 = new Bola(context);
+		b1.x = 485;
+		b1.y = 15;
+		b1.cor = 'blue';
+		b1.raio = 15;
+		b1.velocidadeX = 30;
+		b1.velocidadeY = 30;
+
+		var b2 = new Bola(context);
+		b2.x = 25;
+		b2.y = 15;
+		b2.cor = 'red';
+		b2.raio = 15;
+		b2.velocidadeX = 20;
+		b2.velocidadeY = 20;
+		
+		var b3 = new Bola(context);
+		b3.x = 985;
+		b3.y = 15;
+		b3.cor = 'green';
+		b3.raio = 15;
+		b3.velocidadeX = 22;
+		b3.velocidadeY = 22;
+		
+		var r4 = new Retangulo(context);
+		r4.x = 985;
+		r4.y = 250;
+		r4.l = 50;
+		r4.h = 100;
+		r4.cor = 'orange';
+		r4.velocidadeX = 20;
+		r4.velocidadeY = 20;
+		
+		//Criando Loop de animação
+		var animacao = new Animacao(context);
+		animacao.novoSprite(b1);
+		animacao.novoSprite(b2);
+		animacao.novoSprite(b3);
+		animacao.novoSprite(r4);
+		
+		//"Ligar" a animação
+		animacao.ligar();
+		
+		
+
+	</script>
+</body>
+</html>
